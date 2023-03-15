@@ -27,7 +27,9 @@ class Product
     {
         return $this->price;
     }
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }
-$product1= new Product("Banana","Fruit",6,1);
-$product2= new Product("Apple","Fruit",3,1.5);
-$product3= new Product("Wine","Alcohol",2,10);
+
