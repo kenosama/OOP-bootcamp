@@ -1,0 +1,29 @@
+<?php
+declare(strict_types=1);
+function displayErrors()
+{
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+}
+displayErrors();
+//solution without Classes
+$fruitVat=0.06;
+$alcoholVat=0.1;
+$bananaQuantity=6;
+$bananaPrice=1;
+$totalBananaPrice=($bananaQuantity*$bananaPrice*$fruitVat)+$bananaQuantity*$bananaPrice;
+echo "the price for bananas will be : {$totalBananaPrice} <br>";
+
+$appleQuantity = 3;
+$applePrice = 1.5;
+$totalApplePrice = ($appleQuantity * $applePrice * $fruitVat)+ $appleQuantity * $applePrice;
+echo "the price for apple will be : {$totalApplePrice} <br>";
+
+$wineQuantity=2;
+$winePrice=10;
+$totalWinePrice=($alcoholVat*$winePrice*$wineQuantity)+$winePrice*$wineQuantity;
+echo "the price for wine will be : {$totalWinePrice} <br>";
+
+$basket=$totalApplePrice+$totalBananaPrice+$totalWinePrice;
+echo "the total basket price will be : {$basket}";
