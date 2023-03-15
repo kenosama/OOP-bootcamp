@@ -7,7 +7,7 @@ It's recommended to have one repo, and have multiple folders in there to contain
 
 > 💡 There's not one perfect solution, but 100 different ones with pro's and con's. Discussing often can be a good learning moment.
 
-### Use Case #1
+### ✅Use Case #1
 
 A basket contains the following things:
 - Banana's (6 pieces, costing €1 each)
@@ -22,7 +22,7 @@ Next, do the same **with** classes.
 What style do you prefer? Do you notice any difference in time needed to code, structure or readability?
 From now on, if nothing is stated specifically, it's recommended to use classes.
 
-### Use Case #2
+### ✅Use Case #2
 
 Consider the same basket as in [use case 1](#use-case-1).
 The shop owner wants to have a way to have 50% off every fruit.
