@@ -11,8 +11,6 @@ require('ads.php');
 require('articles.php');
 require('vacancies.php');
 
-
-
 $articles=[
     new Article("Fennel: The Vegetable that Makes You Look Good and Smell Good", "Fennel is the ultimate multi-tasking vegetable. Not only does it taste great in salads, roasted, or sautéed, but it also has some unique properties that make it a true beauty booster.<br><br>
 
@@ -37,7 +35,46 @@ new Vacancies("Fullstack Developer", "Looking for a fullstack developer who can 
 ];
 
 
-
-
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CASE 3</title>
+</head>
+<body>
+    <?php
+    foreach ($articles as $item) {
+        switch ($item->getType()) {
+            case 'Article':
+                echo "<article>
+        <h1 class=\"article-title\">{$item->getTitle()}</h1>
+        <p class=\"article-text\">{$item->getText()}</p>
+    </article>";
+                break;
+            case 'Commercial':
+                echo "<aside>
+        <h1 class=\"commercial-title\">{$item->getTitle()}</h1>
+        <p class=\"commercial-text\">{$item->getText()}</p>
+    </aside>";
+                break;
+            case 'Job':
+                echo "<div class=\"Job\">
+        <h1 class=\"job-title\">
+        {$item->getTitle()}, Apply Now!</h1>
+        <p class=\"job-text\">{$item->getText()}</p>
+    </div>";
+                break;
+            default:
+                "";
+                break;
+        }
+    }
+    ?>
+</body>
+</html>
 
 
