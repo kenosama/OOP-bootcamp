@@ -50,10 +50,10 @@ new Vacancies("Fullstack Developer", "Looking for a fullstack developer who can 
     foreach ($articles as $item) {
         switch ($item->getType()) {
             case 'Article':
-                echo "<article>
-        <h1 class=\"article-title\">{$item->getTitle()}</h1>
-        <p class=\"article-text\">{$item->getText()}</p>
-    </article>";
+                echo '<article class="' . ($item->getStatus() ? 'breaking' : '') . '">';
+                echo '<h1 class="article-title"> '. ($item->getStatus() ? 'Breaking News!!! ' : '') . $item->getTitle() . '</h1>';
+                echo '<p class="article-text">' . $item->getText() . '</p>';
+                echo '</article>';
                 break;
             case 'Commercial':
                 echo "<aside>

@@ -3,9 +3,9 @@ class Article{
     private string $title;
     private string $text;
     private string $type;
-    private bool $isBreakingNews=false; 
+    private bool $isBreakingNews; 
 
-    public function __construct(string $title, string $text, string $type,bool $isBreakingNews)
+    public function __construct(string $title, string $text, string $type,bool $isBreakingNews=false)
     {
         $this->title = $title;
         $this->text = $text;
@@ -23,6 +23,10 @@ class Article{
     public function getType(): string
     {
         return $this->type;
+    }
+    public function getStatus(): bool
+    {
+        return $this->isBreakingNews;
     }
 
 }

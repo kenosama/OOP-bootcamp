@@ -5,7 +5,9 @@ article {
     margin-bottom: 20px;
     padding: 10px;
 }
-
+.breaking{
+    background-color: rgb(118, 217, 212);
+}
 .article-title {
     font-size: 28px;
     font-weight: bold;
