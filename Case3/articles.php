@@ -1,5 +1,5 @@
 <?php
-class Articles{
+class Article{
     private string $title;
     private string $text;
     private string $type;
