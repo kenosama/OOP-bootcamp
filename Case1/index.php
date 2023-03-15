@@ -34,8 +34,8 @@ require('basket.php');
 $products = [
     new Product("Banana", "Fruit", 6, 1),
     new Product("Apple", "Fruit", 3, 1.5),
-    new Product("Wine", "Alcohol", 2, 10),
-    new Product("Vodka", "Alcohol", 1, 20),
+    // new Product("Wine", "Alcohol", 2, 10),
+    // new Product("Vodka", "Alcohol", 6, 20),
 ];
 
 $basket = new Basket();
