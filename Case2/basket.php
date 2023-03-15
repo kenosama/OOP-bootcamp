@@ -8,7 +8,7 @@ class Basket
     public function __construct(array $config = [])
     {
         if (isset($config['discountFruits'])) {
-            $this->discountFruits = $config['discountFruits'];
+            $this->discountFruits = $config['discountFruits'];//when declaring the new Basket, then i will have $basket = new Basket(['discountFruits' => true]); this allows the owner of the shop to activate or not the discount when setting the $basket in a secure way.
         }
     }
 
