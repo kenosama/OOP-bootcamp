@@ -31,15 +31,18 @@ displayErrors();
 require('products.php');
 require('basket.php');
 
-$product1 = new Product("Banana", "Fruit", 6, 1);
-$product2 = new Product("Apple", "Fruit", 3, 1.5);
-$product3 = new Product("Wine", "Alcohol", 2, 10);
-
+$products = [
+    new Product("Banana", "Fruit", 6, 1),
+    new Product("Apple", "Fruit", 3, 1.5),
+    new Product("Wine", "Alcohol", 2, 10),
+    new Product("Vodka", "Alcohol", 1, 20),
+];
 
 $basket = new Basket();
-$basket->addProduct($product1);
-$basket->addProduct($product2);
-$basket->addProduct($product3);
+// Loop through the products and add each one to the basket
+foreach ($products as $product) {
+    $basket->addProduct($product);
+}
 
 $totalPrice = $basket->calculateTotalPrice();
 echo "Total price: " . $totalPrice . PHP_EOL;
