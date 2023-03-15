@@ -5,13 +5,16 @@ class Basket
     private float $fruitVat = 0.06; // 6% VAT for fruits
     private float $alcoholVat = 0.21; // 10% VAT for alcohol
     private bool $discountFruits=false;
+    public function __construct(array $config = [])
+    {
+        if (isset($config['discountFruits'])) {
+            $this->discountFruits = $config['discountFruits'];
+        }
+    }
 
     public function addProduct(Product $product): void
     {
         $this->products[] = $product;
-    }
-    public function setDiscountFruit($value):void{
-        $this->discountFruits= $value;
     }
     private function applyDiscount(Product $product, float $price): float
     {

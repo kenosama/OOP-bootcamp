@@ -19,8 +19,8 @@ $products = [
     // new Product("Vodka", "Alcohol", 6, 20),
 ];
 
-$basket = new Basket();
-$basket->setDiscountFruit(true);
+$basket = new Basket(['discountFruits' => true]);
+
 // Loop through the products and add each one to the basket
 foreach ($products as $product) {
     $basket->addProduct($product);
