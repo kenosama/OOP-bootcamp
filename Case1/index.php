@@ -8,22 +8,41 @@ error_reporting(E_ALL);
 }
 displayErrors();
 //solution without Classes
-$fruitVat=0.06;
-$alcoholVat=0.1;
-$bananaQuantity=6;
-$bananaPrice=1;
-$totalBananaPrice=($bananaQuantity*$bananaPrice*$fruitVat)+$bananaQuantity*$bananaPrice;
-echo "the price for bananas will be : {$totalBananaPrice} <br>";
+// $fruitVat=1.06;
+// $alcoholVat=1.1;
+// $bananaQuantity=6;
+// $bananaPrice=1;
+// $totalBananaPrice=($bananaQuantity*$bananaPrice*$fruitVat)+$bananaQuantity*$bananaPrice;
+// echo "the price for bananas will be : {$totalBananaPrice} <br>";
 
-$appleQuantity = 3;
-$applePrice = 1.5;
-$totalApplePrice = ($appleQuantity * $applePrice * $fruitVat)+ $appleQuantity * $applePrice;
-echo "the price for apple will be : {$totalApplePrice} <br>";
+// $appleQuantity = 3;
+// $applePrice = 1.5;
+// $totalApplePrice = ($appleQuantity * $applePrice * $fruitVat)+ $appleQuantity * $applePrice;
+// echo "the price for apple will be : {$totalApplePrice} <br>";
 
-$wineQuantity=2;
-$winePrice=10;
-$totalWinePrice=($alcoholVat*$winePrice*$wineQuantity)+$winePrice*$wineQuantity;
-echo "the price for wine will be : {$totalWinePrice} <br>";
+// $wineQuantity=2;
+// $winePrice=10;
+// $totalWinePrice=($alcoholVat*$winePrice*$wineQuantity)+$winePrice*$wineQuantity;
+// echo "the price for wine will be : {$totalWinePrice} <br>";
 
-$basket=$totalApplePrice+$totalBananaPrice+$totalWinePrice;
-echo "the total basket price will be : {$basket}";
+// $basket=$totalApplePrice+$totalBananaPrice+$totalWinePrice;
+// echo "the total basket price will be : {$basket}";
+
+require('products.php');
+require('basket.php');
+
+class product
+{
+    private string $name;
+    private string $type;
+    private int $quantity;
+    private float $price;
+
+    public function __construct(string $name, string $type, int $quantity, float $price)
+    {
+        $this->name = $name;
+        $this->type = $type;
+        $this->quantity = $quantity;
+        $this->price = $price;
+    }
+}
