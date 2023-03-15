@@ -30,19 +30,3 @@ displayErrors();
 
 require('products.php');
 require('basket.php');
-
-class product
-{
-    private string $name;
-    private string $type;
-    private int $quantity;
-    private float $price;
-
-    public function __construct(string $name, string $type, int $quantity, float $price)
-    {
-        $this->name = $name;
-        $this->type = $type;
-        $this->quantity = $quantity;
-        $this->price = $price;
-    }
-}
