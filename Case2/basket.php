@@ -13,13 +13,21 @@ class Basket
     public function setDiscountFruit($value):void{
         $this->discountFruits= $value;
     }
+    private function applyDiscount(Product $product, float $price): float
+    {
+        if ($this->discountFruits === true && $product->getType() === "Fruit") {
+            return $price / 2;
+        }
+        return $price;
+    }
+
     public function calculateTotalPrice(): float
     {
         $totalPrice = 0;
-        $articlePrice = 0;
 
         foreach ($this->products as $product) {
             $price = $product->getPrice() * $product->getQuantity();
+            $price = $this->applyDiscount($product, $price);
             $name = $product->getName();
 
             if ($product->getType() === "Fruit") {
@@ -27,14 +35,8 @@ class Basket
             } else {
                 $vat = $this->alcoholVat;
             }
-            
-            if ($this->discountFruits===true && $product->getType()==="Fruit"){
-                $articlePrice = ($price/2) * (1 + $vat);
-            }
-            else
-            {
-                $articlePrice = $price * (1 + $vat);
-            }
+
+            $articlePrice = $price * (1 + $vat);
             echo "The price for the $name, is $articlePrice <br>";
             $totalPrice += $articlePrice;
         }
