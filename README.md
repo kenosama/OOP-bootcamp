@@ -44,7 +44,7 @@ Use this array to show all content types (title + text).
 Bonus: an article can be marked as "breaking news". If this is the case, the title is prepended with "BREAKING: ".
 Extra bonus: display all the content with the appropriate html tags.
 
-### Use Case #4
+### ✅Use Case #4
 
 There's two groups, both of 10 students.
 Every student has a name (even [Jaqen](https://gameofthrones.fandom.com/wiki/Jaqen_H%27ghar)) and gets a grade.
